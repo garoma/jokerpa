@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Minhas compras - Loja Reserva</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="navbar" id="navbar"></nav>
+
+  <main class="container">
+
+    <h1>Minhas compras</h1>
+
+    <section class="resumo" id="resumo"></section>
+
+    <section class="painel">
+      <div class="rolagem">
+        <table>
+          <thead>
+            <tr>
+              <th>Produto</th>
+              <th>Qtd.</th>
+              <th>Total</th>
+              <th>Pago</th>
+              <th>Falta pagar</th>
+              <th>Pagar até</th>
+              <th>Situação</th>
+            </tr>
+          </thead>
+          <tbody id="tabela"></tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/db.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/perfil.js"></script>
+</body>
+</html>

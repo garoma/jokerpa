@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reservas e pagamentos - Administração</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="navbar" id="navbar"></nav>
+
+  <main class="container">
+
+    <h1>Reservas e pagamentos</h1>
+
+    <section class="resumo" id="resumo"></section>
+
+    <div id="msg" class="msg"></div>
+
+    <div class="filtros" style="margin-top: 16px;">
+
+      <input type="search" id="busca" placeholder="Buscar por cliente ou produto...">
+
+      <select id="filtro-status">
+        <option value="">Todas as situações</option>
+        <option value="pendente">Pendente</option>
+        <option value="parcial">Pago parcial</option>
+        <option value="pago">Pago</option>
+        <option value="cancelada">Cancelada</option>
+      </select>
+
+    </div>
+
+    <section class="painel">
+      <div class="rolagem">
+        <table>
+          <thead>
+            <tr>
+              <th>Cliente</th>
+              <th>Produto</th>
+              <th>Qtd.</th>
+              <th>Total</th>
+              <th>Pago</th>
+              <th>Falta</th>
+              <th>Pagar até</th>
+              <th>Situação</th>
+              <th>Dar baixa</th>
+            </tr>
+          </thead>
+          <tbody id="tabela"></tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/db.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/admin-reservas.js"></script>
+</body>
+</html>

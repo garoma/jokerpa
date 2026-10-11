@@ -1,0 +1,24 @@
+LOJA RESERVA - HTML + CSS + JavaScript + banco local (localStorage)
+
+COMO USAR
+1. Abra a pasta no VSCode.
+2. Abra login.html (botão direito > Open with Live Server, ou dê dois cliques no arquivo).
+3. Login do administrador:  usuario: admin   senha: admin123
+   (troque a senha em js/db.js, dentro de Usuarios.iniciar())
+
+ESTRUTURA
+index.html            redireciona para o login
+login.html            login de clientes e do administrador
+cadastro.html         cadastro de novos clientes
+loja.html             cliente: ver produtos, estoque, preço e reservar
+perfil.html           cliente: suas compras, o que pagou e o que falta
+admin-produtos.html   admin: cadastrar, editar e excluir produtos
+admin-reservas.html   admin: acompanhar pagamentos, baixa total/parcial
+css/style.css         estilos de todas as páginas
+js/db.js              banco local (tabelas usuarios, produtos, reservas)
+js/auth.js            sessão, proteção das páginas e menu
+js/*.js               um script para cada página
+
+OBSERVACOES
+- Os dados ficam no navegador (localStorage). Cada computador/navegador tem seu próprio banco.
+- Para apagar tudo: F12 > Application > Local Storage > Clear.

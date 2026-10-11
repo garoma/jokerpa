@@ -1,0 +1,48 @@
+# Sistema operacional
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Visual Studio Code
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# Segredos e configurações locais
+.env
+.env.*
+!.env.example
+appsettings.Local.json
+secrets.json
+
+# Logs e arquivos temporários
+*.log
+logs/
+tmp/
+temp/
+
+# Dependências e arquivos de compilação
+node_modules/
+dist/
+build/
+bin/
+obj/
+
+# Bancos de dados locais e backups
+*.db
+*.sqlite
+*.sqlite3
+*.bak
+*.dump
+*.sql.gz
+*.zip
+
+# Certificados e chaves privadas
+*.pfx
+*.p12
+*.key
+*.pem
+
+# Arquivos temporários do editor
+*.swp
+*.swo

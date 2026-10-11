@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Loja - Loja Reserva</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="navbar" id="navbar"></nav>
+
+  <main class="container">
+
+    <h1>Produtos disponíveis</h1>
+
+    <div id="msg" class="msg"></div>
+
+    <div class="filtros" style="margin-top: 16px;">
+      <input type="search" id="busca" placeholder="Buscar produto...">
+
+      <select id="filtro-categoria">
+        <option value="">Todas as categorias</option>
+        <option>Vestuário</option>
+        <option>Acessórios</option>
+        <option>Calçados</option>
+        <option>Outros</option>
+      </select>
+    </div>
+
+    <section class="vitrine" id="vitrine"></section>
+
+  </main>
+
+  <script src="js/db.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/loja.js"></script>
+</body>
+</html>
