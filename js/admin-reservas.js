@@ -80,7 +80,6 @@ function desenharTabela() {
         '</div>' +
         '<div class="acoes" style="margin-top:6px;">' +
           '<button class="btn btn-pequeno" data-total="' + r.id + '">Baixa total (' + formatarMoeda(falta) + ')</button>' +
-          '<button class="btn btn-pequeno btn-vermelho" data-cancelar="' + r.id + '">Cancelar</button>' +
         '</div>';
     }
 
@@ -89,6 +88,13 @@ function desenharTabela() {
         '<button class="btn btn-pequeno btn-claro" data-chegou="' + r.id + '">Reposição chegou</button>' +
       '</div>';
     }
+
+    // Botão Excluir aparece em todas as reservas
+    if (baixa === '-') baixa = '';
+
+    baixa += '<div class="acoes" style="margin-top:6px;">' +
+      '<button class="btn btn-pequeno btn-vermelho" data-excluir="' + r.id + '">Excluir</button>' +
+    '</div>';
 
     html +=
       '<tr>' +
@@ -126,7 +132,7 @@ function mostrarResultado(resultado, textoOk) {
 tabela.addEventListener('click', function (e) {
   const idParcial = e.target.getAttribute('data-parcial');
   const idTotal = e.target.getAttribute('data-total');
-  const idCancelar = e.target.getAttribute('data-cancelar');
+  const idExcluir = e.target.getAttribute('data-excluir');
   const idChegou = e.target.getAttribute('data-chegou');
 
   // Item reposto: tira o aviso de reposição da reserva
@@ -148,11 +154,18 @@ tabela.addEventListener('click', function (e) {
     mostrarResultado(Reservas.darBaixa(idTotal, Reservas.falta(reserva)), 'Baixa total registrada.');
   }
 
-  // Cancelar reserva: devolve ao estoque
-  if (idCancelar) {
-    if (confirm('Cancelar esta reserva e devolver os itens ao estoque?')) {
-      Reservas.cancelar(idCancelar);
-      mostrarMensagem(msg, 'Reserva cancelada e estoque devolvido.', 'ok');
+  // Excluir: apaga o registro da reserva
+  if (idExcluir) {
+    const reserva = Reservas.listar().find(function (r) { return r.id === idExcluir; });
+    const paga = Reservas.status(reserva) === 'pago';
+
+    const aviso = paga
+      ? 'Excluir este registro? A reserva já está paga, então o estoque não será alterado.'
+      : 'Excluir este registro? Os itens voltam para o estoque.';
+
+    if (confirm(aviso)) {
+      Reservas.excluir(idExcluir);
+      mostrarMensagem(msg, 'Registro excluído.', 'ok');
       desenharTabela();
     }
   }

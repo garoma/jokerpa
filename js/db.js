@@ -262,24 +262,28 @@ const Reservas = {
     return { ok: true };
   },
 
-  // Cancela a reserva e devolve os itens ao estoque
-  cancelar(reservaId) {
+  // Exclui a reserva (apaga o registro).
+  // Se ainda não estava paga por completo, devolve ao estoque
+  // só o que foi descontado dele quando a reserva foi feita.
+  excluir(reservaId) {
     const lista = this.listar();
     const reserva = lista.find(r => r.id === reservaId);
 
-    if (!reserva || reserva.cancelada) return;
+    if (!reserva) return;
 
-    reserva.cancelada = true;
-    DB.salvar('reservas', lista);
+    const devolveEstoque = !reserva.cancelada && this.status(reserva) !== 'pago';
 
-    // Devolve ao estoque só o que foi descontado dele
-    const devolver = reserva.qtdDoEstoque !== undefined ? reserva.qtdDoEstoque : reserva.quantidade;
-    const produto = Produtos.buscar(reserva.produtoId);
+    if (devolveEstoque) {
+      const devolver = reserva.qtdDoEstoque !== undefined ? reserva.qtdDoEstoque : reserva.quantidade;
+      const produto = Produtos.buscar(reserva.produtoId);
 
-    if (produto && devolver > 0) {
-      produto.estoque += devolver;
-      Produtos.salvar(produto);
+      if (produto && devolver > 0) {
+        produto.estoque += devolver;
+        Produtos.salvar(produto);
+      }
     }
+
+    DB.salvar('reservas', lista.filter(r => r.id !== reservaId));
   },
 
   // Admin avisa que o item chegou (some o aviso de reposição)
