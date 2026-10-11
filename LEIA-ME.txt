@@ -14,8 +14,10 @@ loja.html             cliente: ver produtos, estoque, preço e reservar
 perfil.html           cliente: suas compras, o que pagou e o que falta
 admin-produtos.html   admin: cadastrar, editar e excluir produtos
 admin-reservas.html   admin: acompanhar pagamentos, baixa total/parcial
+admin-backup.html     admin: baixar backup em CSV e restaurar dados
 css/style.css         estilos de todas as páginas
 js/db.js              banco local (tabelas usuarios, produtos, reservas)
+js/backup.js          gerar e ler o arquivo CSV de backup
 js/auth.js            sessão, proteção das páginas e menu
 js/*.js               um script para cada página
 

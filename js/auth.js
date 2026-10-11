@@ -40,7 +40,8 @@ function montarMenu(usuario) {
   const links = usuario.perfil === 'admin'
     ? [
         { href: 'admin-produtos.html', texto: 'Produtos' },
-        { href: 'admin-reservas.html', texto: 'Reservas e pagamentos' }
+        { href: 'admin-reservas.html', texto: 'Reservas e pagamentos' },
+        { href: 'admin-backup.html', texto: 'Backup' }
       ]
     : [
         { href: 'loja.html', texto: 'Loja' },

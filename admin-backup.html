@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Backup - Administração</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="navbar" id="navbar"></nav>
+
+  <main class="container">
+
+    <h1>Backup e restauração</h1>
+
+    <section class="resumo" id="resumo"></section>
+
+    <div id="msg" class="msg"></div>
+
+    <section class="painel" style="margin-top: 16px;">
+
+      <h2>Fazer backup</h2>
+
+      <p>
+        Baixa um arquivo CSV com usuários, produtos, reservas e pagamentos.
+        Guarde o arquivo em um lugar seguro (pendrive, e-mail ou nuvem).
+      </p>
+
+      <p id="ultimo-backup" style="color: var(--suave);"></p>
+
+      <button type="button" class="btn btn-verde" id="btn-backup">Baixar backup (CSV)</button>
+
+    </section>
+
+    <section class="painel">
+
+      <h2>Restaurar backup</h2>
+
+      <p>
+        Escolha um arquivo de backup gerado por esta página.
+        <strong>Atenção:</strong> todos os dados atuais serão substituídos pelos do arquivo.
+      </p>
+
+      <label for="arquivo">Arquivo de backup (.csv)</label>
+      <input type="file" id="arquivo" accept=".csv,text/csv">
+
+      <div style="margin-top: 18px;">
+        <button type="button" class="btn btn-vermelho" id="btn-restaurar">Restaurar dados</button>
+      </div>
+
+      <p style="color: var(--suave); font-size: 0.88rem;">
+        Dica: não abra e salve o arquivo no Excel antes de restaurar, ele pode alterar o formato.
+      </p>
+
+    </section>
+
+  </main>
+
+  <script src="js/db.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/backup.js"></script>
+  <script src="js/admin-backup.js"></script>
+</body>
+</html>
