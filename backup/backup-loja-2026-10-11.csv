@@ -1,0 +1,27 @@
+﻿#BACKUP Loja Reserva,versao 1,2026-10-12T00:47:58.200Z
+
+#usuarios
+id,nome,usuario,senha,telefone,perfil
+mv4gnqphmz5ar,Administrador,admin,19uy3p94y8y,,admin
+mv4h3epn1ryw7,kelly,kelly,1pekp8kgg2q,11,cliente
+mv4ht4a2t0qpn,jaqueline,jaqueline,1pekp8kgg2q,11,cliente
+mv4j11fript9z,mayara,mayara,1pekp8kgg2q,11,cliente
+mv4j1fgmeojgo,dorinha,dorinha,1pekp8kgg2q,11,cliente
+
+#produtos
+id,nome,categoria,preco,estoque,descricao,imagem
+mv4gw9k86dvzn,calca,Vestuário,25,0,,
+mv4hfqkpz69hd,short,Vestuário,20,0,,
+mv4hfzcptsnpm,saia,Vestuário,20,0,,
+
+#reservas
+id,usuarioId,produtoId,produtoNome,precoUnitario,quantidade,total,dataPagamento,criadoEm,pagamentos,cancelada,aguardandoReposicao,qtdDoEstoque
+mv4j2bu7vww0u,mv4h3epn1ryw7,mv4gw9k86dvzn,calca,25,1,25,2026-11-21,2026-10-11,[],false,true,0
+mv4j2sufsxn5f,mv4h3epn1ryw7,mv4hfqkpz69hd,short,20,2,40,2026-11-21,2026-10-11,[],false,true,0
+mv4j2ww7cxtpb,mv4h3epn1ryw7,mv4hfzcptsnpm,saia,20,1,20,2026-11-21,2026-10-11,[],false,true,0
+mv4j3srfqfkb6,mv4ht4a2t0qpn,mv4gw9k86dvzn,calca,25,1,25,2026-11-21,2026-10-11,[],false,true,0
+mv4j42ijr1lz3,mv4ht4a2t0qpn,mv4hfqkpz69hd,short,20,1,20,2026-11-21,2026-10-11,[],false,true,0
+mv4j7jbsq3m73,mv4j11fript9z,mv4gw9k86dvzn,calca,25,2,50,2026-11-23,2026-10-11,[],false,true,0
+mv4j7qhwkmlss,mv4j11fript9z,mv4hfqkpz69hd,short,20,2,40,2026-11-23,2026-10-11,[],false,true,0
+mv4j8d806n1vj,mv4j1fgmeojgo,mv4gw9k86dvzn,calca,25,1,25,2026-11-25,2026-10-11,[],false,true,0
+mv4j8hs02o40m,mv4j1fgmeojgo,mv4hfqkpz69hd,short,20,1,20,2026-11-25,2026-10-11,[],false,true,0
